@@ -45,7 +45,6 @@
 			  	@foreach($categories as $category)
 	<tr>
 		<th scope="row">{{$categories->firstItem()+$loop->index}} </th>
-		<!-- <td>{{$category->id}}</td> -->
 		<td>{{$category->category_name}}</td>
 		<td>{{$category->user->name}}</td>
 		
@@ -55,8 +54,8 @@
 
 		@else
 
-		{{-- this is the style of commenting in blade --}}
-		{{-- $category->created_at->diffForHumans() --}}
+<!-- 		{{-- this is the style of commenting in blade --}}
+		{{-- $category->created_at->diffForHumans() --}} -->
 
 		{{Carbon\Carbon::parse($category->created_at)->diffForHumans()}}
 
@@ -66,7 +65,7 @@
 		<td>
 			
 			<a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">Edit</a>
-			<a href="{{url('category/delete/'.$category->id)}}" class="btn btn-danger">Delete</a>
+			<a href="{{url('softdelete/category/'.$category->id)}}" class="btn btn-danger">Delete</a>
 
 		</td>
 
@@ -83,7 +82,7 @@
   </tbody>
 </table>
 
-		{{-- paginate --}}
+		<!-- {{-- paginate --}} -->
 
 		{{ $categories->links()}}
 
@@ -145,19 +144,7 @@
         	<div class="col-md-8">
         		<div class="card">
 
-
-
-        			@if(session('success'))
-
-        			<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>{{session('success')}}</strong>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					</div>
-					@endif
-
-
-
-        			<div class="card-header"> Trash </div>        		
+        			<div class="card-header">Trash </div>        		
 
 			            <table class="table">
 			  <thead>
@@ -174,8 +161,7 @@
 
 			  	@foreach($trashCat as $trash)
 	<tr>
-		<th scope="row">{{$categories->firstItem()+$loop->index}} </th>
-		<!-- <td>{{$category->id}}</td> -->
+		<th scope="row">{{$trashCat->firstItem()+$loop->index}} </th>
 		<td>{{$trash->category_name}}</td>
 		<td>{{$trash->user->name}}</td>
 		
@@ -185,18 +171,20 @@
 
 		@else
 
-		{{-- this is the style of commenting in blade --}}
-		{{-- $trash->created_at->diffForHumans() --}}
+<!-- 		{{Carbon\Carbon::parse($trash->created_at)->diffForHumans()}}
+ -->
 
-		{{Carbon\Carbon::parse($trash->created_at)->diffForHumans()}}
+		{{$trash->created_at->diffForHumans()}}
+
+
 
 		@endif</td>
 
 
 		<td>
 			
-			<a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">Edit</a>
-			<a href="{{url('category/delete/'.$category->id)}}" class="btn btn-danger">Delete</a>
+			<a href="{{url('category/restore/'.$trash->id)}}" class="btn btn-info">Restore</a>
+			<a href="{{url('permdelete/category/'.$trash->id)}}" class="btn btn-danger">Delete</a>
 
 		</td>
 
@@ -213,9 +201,9 @@
   </tbody>
 </table>
 
-		{{-- paginate --}}
+<!-- {{-- paginate --}} -->
 
-		{{ $trashCat->links()}}
+{{ $trashCat->links()}}
 
 </div>
 
@@ -236,3 +224,22 @@
 
     </div>
 </x-app-layout>
+
+
+
+
+
+
+
+
+
+
+<!--     public function Restore($id){
+        //eloquent style
+        $delete = Category::withTrashed()->find($id);
+        $delete->deleted_at = null;
+        $delete->save();
+        return Redirect()->back()->with('success','Category was restored successfully.');
+
+ -->
+
