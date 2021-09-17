@@ -61,6 +61,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         Route::post('/brand/add', [BrandCon::class,'AddBrand'])->name('store.brand');
         Route::get('/brand/edit/{id}', [BrandCon::class,'Edit']);
         Route::post('/brand/update/{id}',[BrandCon::class, 'Update']);
+        Route::get('/brand/delete/{id}',[BrandCon::class, 'Delete']);
+
 
 
 
