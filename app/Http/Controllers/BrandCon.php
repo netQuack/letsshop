@@ -37,24 +37,15 @@ class BrandCon extends Controller
 
     ]);
 
-
-//image insertion
-
+        //image insertion
         $brand_image = $request->file('brand_image');
-
         //auto generate
-
         $name_gen = hexdec(uniqid());
-
-
         $img_ext = strtolower($brand_image->getClientOriginalExtension());
-
         $img_name = $name_gen.'.'.$img_ext;
-
         $up_location = 'images/brand/';
         $last_img = $up_location.$img_name;
         $brand_image->move($up_location,$img_name);
-
         // eloquent old style of data insertion
         
         Brand::insert([
@@ -63,23 +54,53 @@ class BrandCon extends Controller
         'created_at' => Carbon::now()
     ]);
 
-//  start query builder style data insertion
-
-        // $data = array();
-        // $data['category_name'] = $request->category_name;
-        // $data['user_id'] = Auth::user()->id;
-        // DB::table('categories')->insert($data);
-
-//end of query builder style data insertion
-
-      //  Professional way of eloquent data insertion
-
-        // $category = new Category;
-        // $category->category_name = $request->category_name;
-        // $category->user_id = Auth::user()->id;
-        // $category->save();
-
         return Redirect()->back()->with('success','Brand inserted successfully.');
 
     }
+
+    public function Edit($id){
+
+        //eloquent style
+        $brands = Brand::find($id);
+        return view('admin.brand.edit',compact('brands'));
+    }
+   
+
+    //update
+
+    public function Update(Request $request, $id){
+        //eloquent style
+        $validated = $request->validate([
+        'brand_name' => 'required|min:4',
+        
+    ],
+    [
+        'brand_name.required' => 'Please input the brand name.',
+        'brand_name.min' => 'Input 4 charecters atleast.',
+    ]);
+        
+        //image update
+
+        $old_image = $request->old_image;
+        $brand_image = $request->file('brand_image');
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($brand_image->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $up_location = 'images/brand/';
+        $last_img = $up_location.$img_name;
+        $brand_image->move($up_location,$img_name);
+         
+
+        unlink($old_image);
+        Brand::find($id)->update([
+        'brand_name' => $request->brand_name,
+        'brand_image' => $last_img,
+        'created_at' => Carbon::now()]);
+        return Redirect()->back()->with('success','Brand updated successfully.');
+    }
+
+
+
+
+
 }
