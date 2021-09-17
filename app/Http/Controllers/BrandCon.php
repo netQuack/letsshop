@@ -83,6 +83,10 @@ class BrandCon extends Controller
 
         $old_image = $request->old_image;
         $brand_image = $request->file('brand_image');
+
+        if($brand_image){
+
+
         $name_gen = hexdec(uniqid());
         $img_ext = strtolower($brand_image->getClientOriginalExtension());
         $img_name = $name_gen.'.'.$img_ext;
@@ -97,6 +101,21 @@ class BrandCon extends Controller
         'brand_image' => $last_img,
         'created_at' => Carbon::now()]);
         return Redirect()->back()->with('success','Brand updated successfully.');
+
+        }
+        else{
+
+        Brand::find($id)->update([
+        'brand_name' => $request->brand_name,
+        'created_at' => Carbon::now()]);
+        return Redirect()->back()->with('success','Brand updated successfully.');
+
+
+
+
+        }
+
+       
     }
 
 

@@ -9,6 +9,18 @@
         </h2>
     </x-slot>
 
+
+    @if(session('success'))
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{session('success')}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif    
+
+
+
+
     <div class="py-12">
     <div class="container">
         <div class="row">
@@ -23,6 +35,8 @@
         <form action="{{url('brand/update/'.$brands->id) }}" method="POST" enctype="multipart/form-data">
 
         	@csrf
+    
+
     <input type="hidden" name="old_image" value="{{$brands->brand_image}}">
 
 
