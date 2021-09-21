@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContactCon;
 use App\Http\Controllers\CategoryCon;
+use App\Http\Controllers\MultiPicCon;
 use App\Models\User;
 use App\Http\Controllers\BrandCon;
 
@@ -32,11 +33,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     
     $users = User::all();
-
-
-
-
-    return view('dashboard',compact('users'));
+    return view('admin.index');
 })->name('dashboard');
 
 
@@ -62,6 +59,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         Route::get('/brand/edit/{id}', [BrandCon::class,'Edit']);
         Route::post('/brand/update/{id}',[BrandCon::class, 'Update']);
         Route::get('/brand/delete/{id}',[BrandCon::class, 'Delete']);
+
+//Multi Image Route
+
+        Route::get('/brand/images', [MultiPicCon::class, 'MultiPics'])->name('multi.image');
+        Route::post('/brand/addimages', [MultiPicCon::class,'AddImages'])->name('store.images');
+        //Route::post('/brand/add', [BrandCon::class,'AddBrand'])->name('store.brand');
+
+
 
 
 

@@ -6,30 +6,30 @@ use Illuminate\Http\Request;
 use App\Models\Brand;
 use Auth;
 use Illuminate\Support\Carbon;
-
+use Image;
 use Illuminate\Support\Facades\DB;
 
 
 class BrandCon extends Controller
 {
+
+
+public function __construct(){
+
+        $this->middleware('auth');
+    }
     
-
+    
     public function AllBrand(){
-
-
-
          $brands = Brand::latest()->paginate(5);
 
         return view('admin.brand.index', compact('brands'));
-
     }
-
 
    public function AddBrand(Request $request){
 
         $validated = $request->validate([
         'brand_name' => 'required|unique:brands|max:20',
-        //'body' => 'required',
     ],
     [
         'brand_name.required' => 'Please input the brand name.',
@@ -40,14 +40,20 @@ class BrandCon extends Controller
         //image insertion
         $brand_image = $request->file('brand_image');
         //auto generate
-        $name_gen = hexdec(uniqid());
-        $img_ext = strtolower($brand_image->getClientOriginalExtension());
-        $img_name = $name_gen.'.'.$img_ext;
-        $up_location = 'images/brand/';
-        $last_img = $up_location.$img_name;
-        $brand_image->move($up_location,$img_name);
+        // $name_gen = hexdec(uniqid());
+        // $img_ext = strtolower($brand_image->getClientOriginalExtension());
+        // $img_name = $name_gen.'.'.$img_ext;
+        // $up_location = 'images/brand/';
+        // $last_img = $up_location.$img_name;
+        // $brand_image->move($up_location,$img_name);
         // eloquent old style of data insertion
         
+
+        //IMAGE INTERVENTION
+        $name_gen = hexdec(uniqid()).'.'.$brand_image->getClientOriginalExtension();
+        Image::make($brand_image)->resize(300,200)->save('images/brand/'.$name_gen);
+        $last_img = 'images/brand/'.$name_gen;
+
         Brand::insert([
         'brand_name' => $request->brand_name,
         'brand_image' => $last_img,
