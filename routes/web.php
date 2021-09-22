@@ -99,3 +99,6 @@ Route::get('/map', function () {
     return view('map');
     //echo "THIS IS THE CONTACT PAGE";
 });
+
+Route::get('/user/logout', [ContactCon::class, 'Logout'])->name('user.logout');
+
