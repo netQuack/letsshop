@@ -3,96 +3,315 @@
 
 @section('home')
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-
-      <div class="carousel-inner" role="listbox">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url({{asset('frontend/assets/img/slide/slide1.jpg')}});">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Welcome to <span>Company</span></h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url({{asset('frontend/assets/img/slide/slide2.jpg')}});">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Lorem Ipsum Dolor</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url({{asset('frontend/assets/img/slide/slide3.jpg')}});">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Sequi ea ut et est quaerat</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-    </div>
-  </section><!-- End Hero -->
-
-
     <!-- ======= Featured Category Section ======= -->
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Featured Category</strong></h2>
-          <p>Get Your Desired Product from Featured Category!</p>
         </div>
 
         <div class="row">
 <!-- test -->
 
-          <div class="col-lg-2 col-md-4 portfolio-item filter-app">
-            <img src="{{asset('frontend/assets/img/featuredcat/desktop-48x48.png')}}" class="img-fluid" alt="">
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">            <img src="{{asset('frontend/assets/img/featuredcat/desktop-48x48.png')}}" class="img-fluid" alt="">
+           
+
+
             <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="{{asset('frontend/assets/img/featuredcat/desktop-48x48.png')}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+  
+             
+                            <h5><a href="">Desktop</a></h5>
+            </div>
+          </div>
+</div>
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">            <img src="{{asset('frontend/assets/img/featuredcat/laptop-48x48.png')}}" class="img-fluid" alt="">
+           
+
+
+            <div class="portfolio-info"> 
+            <h5><a href="">Laptop</a></h5>
+            </div>
+          </div>
+</div>
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">            <img src="{{asset('frontend/assets/img/featuredcat/desktop-48x48.png')}}" class="img-fluid" alt="">
+           
+
+
+            <div class="portfolio-info">
+  
+             
+                            <h5><a href="">Desktop</a></h5>
+            </div>
+          </div>
+</div>
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">            <img src="{{asset('frontend/assets/img/featuredcat/cpu-48x48.png')}}" class="img-fluid" alt="">
+           
+
+
+            <div class="portfolio-info">
+  
+             
+                            <h5><a href="">Processor</a></h5>
+            </div>
+          </div>
+</div>
+
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app home">
+
+            <div class="text-center">
+            <img src="{{asset('frontend/assets/img/featuredcat/gpu-48x48.png')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+                            <h5><a href="">Graphics Card</a></h5>
+            </div>
+          </div>
+</div>
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">
+            <img src="{{asset('frontend/assets/img/featuredcat/SSD-48x48.png')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+                            <h5><a href="">SSD</a></h5>
+            </div>
+          </div>
+</div>
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">
+            <img src="{{asset('frontend/assets/img/featuredcat/keyboard-48x48.png')}}" class="img-fluid" alt="">
+           
+
+
+            <div class="portfolio-info">
+            <h5><a href="">Keyboard</a></h5>
+            </div>
+          </div>
+</div>
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">
+            <img src="{{asset('frontend/assets/img/featuredcat/accessories-48x48.png')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+            <h5><a href="">Mouse</a></h5>
+            </div>
+          </div>
+</div>
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+            <div class="text-center">            <img src="{{asset('frontend/assets/img/featuredcat/headphone-48x48.png')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">    
+                            <h5><a href="">Headphone</a></h5>
+            </div>
+          </div>
+</div>
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+  <a href="" class= " div1 bg-white">
+
+            <div class="text-center">
+            <img src="{{asset('frontend/assets/img/featuredcat/gadget-48x48.png')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+                                        <h5><a href="">Gadget</a></h5>
+
+            </a>
+            </div>
+          </div>
+</div>
+
+
+          <div class="col-lg-2 col-md-4 portfolio-item filter-app home">
+            <a href="" class= "">
+            <div class="text-center">
+            <img src="{{asset('frontend/assets/img/featuredcat/printer-48x48.png')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+            <h5><a href="">Printer</a></h5>
+
+            </a>
+
+            </div>
+          </div>
+</div>
+
+
+ <div class="col-lg-2 col-md-4 portfolio-item filter-app">
+
+
+
+
+            <div class="text-center">            <img src="{{asset('frontend/assets/img/featuredcat/webcam-48x48.png')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+            <h5><a href="">Webcam</a></h5>
+            </div>
+          </div>
+</div>
+
+<!-- end test -->
+
+
+        </div>
+
+      </div>
+    </section>
+
+<!-- End featured category Section -->
+
+
+
+<!-- FEATURED PRODUCTS -->
+
+
+    <!-- ======= Featured Products Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Featured Products</strong></h2>
+          <p>Check & Get Your Desired Product !</p>
+        </div>
+
+        <div class="row">
+<!-- test -->
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/1.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/2.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/3.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/4.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/5.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/6.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/7.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/8.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/9.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/10.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
             </div>
           </div>
 
 
 
-                 <div class="col-lg-2 col-md-4 portfolio-item filter-app">
-            <img src="{{asset('frontend/assets/img/featuredcat/laptop-48x48.png')}}" class="img-fluid" alt="">
+
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/11.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="{{asset('frontend/assets/img/featuredcat/laptop-48x48.png')}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
+
+
+                    <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+            <img src="{{asset('frontend/assets/img/featprod/12.jpg')}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+  
+             
+                            <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
+            </div>
+          </div>
+
 
 <!-- end test -->
 
@@ -104,8 +323,8 @@
                 </svg>
                 <i class="bx bx-slideshow"></i>
               </div>
-              <h4><a href="">Dele Cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+              <h4><a href="">Desktop</a></h4>
+              <p>Build your Desktop or buy a brand one</p>
             </div>
           </div>
 
@@ -114,6 +333,13 @@
 
       </div>
     </section><!-- End Services Section -->
+
+
+
+<!-- END FEATURED PRODUCTS -->
+
+
+
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">

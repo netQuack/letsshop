@@ -2084,6 +2084,25 @@ section {
   font-size: 14px;
 }
 
+.home {
+
+	    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	background-color: #cfcfcf;
+	padding: 20px 10px;
+	padding-bottom: 0px;
+	margin: 5px 0;
+	height: 150px;
+	
+	
+}
+
+.cat-item .cat-item-inner:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	background-color: #cfcfcf;
+	padding: 5px;
+}
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
